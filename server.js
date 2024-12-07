@@ -13,11 +13,11 @@ const app = express();
 
 const PORT = process.env.PORT;
 
-// app.use(cors({
-//     origin: "*",
-//     methods: ["POST", "PUT", "GET", "DELETE"],
-//     credentials: true
-// }));
+app.use(cors({
+    origin: "https://login-signup-auth-backend.onrender.com/",
+    methods: ["POST", "PUT", "GET", "DELETE"],
+    credentials: true
+}));
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
