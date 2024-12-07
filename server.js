@@ -14,7 +14,7 @@ const app = express();
 const PORT = process.env.PORT;
 
 app.use(cors({
-    origin: ["https://login-signup-auth-frontend.onrender.com"],
+    origin: [process.env.FRONTEND_URL],
     methods: ["POST", "PUT", "GET", "DELETE"],
     credentials: true
 }));
