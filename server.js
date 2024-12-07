@@ -14,12 +14,16 @@ const app = express();
 const PORT = process.env.PORT;
 
 const corsOptions = {
-    origin: process.env.FRONTEND_URL, 
+    origin: 'https://login-signup-auth-frontend.onrender.com',
     methods: 'GET,POST,PUT,DELETE', 
-    allowedHeaders: ['Content-Type', 'Authorization'], 
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   };
   
   app.use(cors(corsOptions));
+
+  app.options('*', cors(corsOptions)); // Handle preflight requests
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
