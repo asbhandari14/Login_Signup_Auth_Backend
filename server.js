@@ -16,7 +16,8 @@ const PORT = process.env.PORT;
 app.use(cors({
     origin: process.env.FRONTEND_URL,
     methods: ["POST", "PUT", "GET", "DELETE"],
-    credentials: true
+    credentials: true,
+    allowedHeaders : "Content-Type,Authorization"
 }));
 
 app.use(express.json());
